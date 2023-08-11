@@ -2,12 +2,15 @@
 This is my system environment:
 ```
 Linux Fedora 34 (5.17.12-100.fc34.x86_64)
-gcc (GCC) 11.3.1 20220421 (Red Hat 11.3.1-2)
+CMake v3.20.5
+GCC v11.3.1 20220421 (Red Hat 11.3.1-2)
+NASM v2.15.0
 Python v3.9.13
 Boost v1.75.0
 OpenUSD v0.23.8
 OpenEXR v2.4.0
 MaterialX v1.38.7
+MDL-SDK 367100.2992
 ```
 ### Changes:
 - [CMakeLists.txt](CMakeLists.txt)<br>
