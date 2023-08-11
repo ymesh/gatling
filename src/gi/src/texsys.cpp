@@ -26,6 +26,7 @@
 
 #include <assert.h>
 #include <inttypes.h>
+#include <cstring>
 
 using namespace gtl;
 

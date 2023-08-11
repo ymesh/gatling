@@ -105,15 +105,16 @@ target_include_directories(turbojpeg-static PUBLIC $<BUILD_INTERFACE:${CMAKE_CUR
 #
 # Imath
 #
-add_subdirectory(Imath)
+# add_subdirectory(Imath)
 
 #
 # OpenEXR
 #
-set(OPENEXR_INSTALL OFF)
-set(OPENEXR_INSTALL_TOOLS OFF)
-set(OPENEXR_INSTALL_EXAMPLES OFF)
-add_subdirectory(OpenEXR)
+# set(OPENEXR_INSTALL OFF)
+# set(OPENEXR_INSTALL_TOOLS OFF)
+# set(OPENEXR_INSTALL_EXAMPLES OFF)
+# add_subdirectory(OpenEXR)
+
 
 #
 # stb

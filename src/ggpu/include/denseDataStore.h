@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2023 Pablo Delgado Krämer
+// Copyright (C) 2023 Pablo Delgado Krï¿½mer
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 
 #pragma once
 
+#include <cstring>
 #include <stdlib.h>
 #include <stdint.h>
 #include <assert.h>

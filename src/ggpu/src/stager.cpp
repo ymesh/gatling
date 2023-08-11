@@ -19,6 +19,7 @@
 
 #include <assert.h>
 #include <algorithm>
+#include <cstring>
 
 const static uint64_t BUFFER_SIZE = 64 * 1024 * 1024;
 const static uint64_t BUFFER_HALF_SIZE = BUFFER_SIZE / 2;

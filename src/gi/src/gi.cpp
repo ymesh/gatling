@@ -306,7 +306,7 @@ GiMaterial* giCreateMaterialFromMtlxStr(const char* str)
 
 GiMaterial* giCreateMaterialFromMtlxDoc(const std::shared_ptr<void/*MaterialX::Document*/> doc)
 {
-  MaterialX::DocumentPtr resolvedDoc = static_pointer_cast<MaterialX::Document>(doc);
+  MaterialX::DocumentPtr resolvedDoc = std::static_pointer_cast<MaterialX::Document>(doc);
   if (!doc)
   {
     return nullptr;

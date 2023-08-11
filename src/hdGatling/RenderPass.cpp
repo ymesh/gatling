@@ -424,7 +424,8 @@ void HdGatlingRenderPass::_BakeMeshes(HdRenderIndex* renderIndex,
 {
   _ClearMaterials();
 
-  TfHashMap<std::string, uint32_t> materialMap;
+  // XXX: TfHashMap<std::string, uint32_t> materialMap;
+  TfHashMap<const char *, uint32_t> materialMap;
   materialMap[""] = 0;
 
   materials.push_back(m_defaultMaterial);
@@ -465,9 +466,12 @@ void HdGatlingRenderPass::_BakeMeshes(HdRenderIndex* renderIndex,
     std::string materialIdStr = materialId.GetAsString();
 
     uint32_t materialIndex = 0;
-    if (!materialId.IsEmpty() && materialMap.find(materialIdStr) != materialMap.end())
+    // XXX:
+    // auto mat_id = materialMap.find(materialIdStr.c_str());
+    if (!materialId.IsEmpty() && materialMap.find(materialIdStr.c_str()) != materialMap.end())
+    // XXX: if (!materialId.IsEmpty() && materialMap.find(materialIdStr) != materialMap.end())
     {
-      materialIndex = materialMap[materialIdStr];
+        materialIndex = materialMap[materialIdStr.c_str()];
     }
     else
     {
@@ -497,9 +501,9 @@ void HdGatlingRenderPass::_BakeMeshes(HdRenderIndex* renderIndex,
         materialIdStr = TfStringPrintf("color_%f_%f_%f", color[0], color[1], color[2]);
         std::replace(materialIdStr.begin(), materialIdStr.end(), '.', '_'); // _1.9_ -> _1_9_
 
-        if (materialMap.find(materialIdStr) != materialMap.end())
+        if (materialMap.find(materialIdStr.c_str()) != materialMap.end())
         {
-          materialIndex = materialMap[materialIdStr];
+          materialIndex = materialMap[materialIdStr.c_str()];
         }
         else
         {
@@ -517,7 +521,7 @@ void HdGatlingRenderPass::_BakeMeshes(HdRenderIndex* renderIndex,
       {
         materialIndex = materials.size();
         materials.push_back(giMat);
-        materialMap[materialIdStr] = materialIndex;
+        materialMap[materialIdStr.c_str()] = materialIndex;
       }
     }
 

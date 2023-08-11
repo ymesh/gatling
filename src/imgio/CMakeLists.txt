@@ -1,3 +1,7 @@
+find_package(OpenEXR REQUIRED)
+message("* OPENEXR_LIBRARIES = ${OPENEXR_LIBRARIES}")
+message("* OPENEXR_INCLUDE_DIRS = ${OPENEXR_INCLUDE_DIRS}")
+
 add_library(
   imgio STATIC
   include/imgio.h
@@ -25,6 +29,7 @@ target_include_directories(
   imgio
   PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${OPENEXR_INCLUDE_DIRS}
   PRIVATE
     src
 )
@@ -34,6 +39,7 @@ target_link_libraries(
   PRIVATE
     spng
     turbojpeg-static
-    OpenEXR::OpenEXR
+    # OpenEXR::OpenEXR
+    ${OPENEXR_LIBRARIES}
     stb
 )
